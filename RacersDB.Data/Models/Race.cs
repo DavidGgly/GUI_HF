@@ -48,14 +48,14 @@ namespace RacersDB.Data.Models
         public decimal Winnerid { get; set; }
 
         /// <summary>
-        /// Gets the track, where this race was organized.
+        /// Gets or sets the track, where this race was organized.
         /// </summary>
-        public virtual Racetrack RtrackNavigation { get; }
+        public virtual Racetrack RtrackNavigation { get; set; }
 
         /// <summary>
-        /// Gets the Winner of this Race.
+        /// Gets or sets the Winner of this Race.
         /// </summary>
-        public virtual Racer Winner { get; }
+        public virtual Racer Winner { get; set; }
 
         /// <inheritdoc/>
         public override bool Equals(object obj)

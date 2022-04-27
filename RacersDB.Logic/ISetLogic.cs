@@ -51,24 +51,21 @@ namespace RacersDB.Logic
         public void DeleteOldRacetrack(Racetrack raceToDel);
 
         /// <summary>
-        /// Changes the Winner's ID in a chosen Race.
+        /// Updates a chosen Race.
         /// </summary>
-        /// <param name="raceID">The ID of the Race, we would like to modify.</param>
-        /// <param name="newWinnerID">The ID of the new Winner.</param>
-        void ChangeRaceWinnersID(int raceID, int newWinnerID);
+        /// <param name="newRace">The updated Race.</param>
+        void UpdateRace(Race newRace);
 
         /// <summary>
-        /// Changes the Racer's summary of winnings based on it's ID.
+        /// Updates a chosen Racer.
         /// </summary>
-        /// <param name="racerID">The ID of the Racer, we would like to modify.</param>
-        /// <param name="newSumWin">The new value of the chosen Racers SumWin property.</param>
-        void ChangeSumWin(int racerID, int newSumWin);
+        /// <param name="newRacer">The updated Racer.</param>
+        void UpdateRacer(Racer newRacer);
 
         /// <summary>
-        /// Changes the name of a chosen Racetrack.
+        /// Updates a chosen Racetrack.
         /// </summary>
-        /// <param name="racetrackID">The ID of the Racetrack, we would like to modify.</param>
-        /// <param name="newName">The new name of the chosen Racetrack.</param>
-        void ChangeRacetracksName(int racetrackID, string newName);
+        /// <param name="newRacetrack">The updated Racetrack.</param>
+        void UpdateRacetrack(Racetrack newRacetrack);
     }
 }

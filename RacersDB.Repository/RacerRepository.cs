@@ -26,13 +26,22 @@ namespace RacersDB.Repository
         }
 
         /// <inheritdoc/>
-        public void ChangeSumWin(int id, int newSumWin)
+        public void UpdateRacer(Racer newRacer)
         {
-            var copy = this.GetById(id);
-
-            if (copy != null)
+            if (newRacer != null)
             {
-                copy.Sumwin = newSumWin;
+                Racer copy = this.GetById((int)newRacer.Id);
+
+                if (copy != null)
+                {
+                    copy.Age = newRacer.Age;
+                    copy.Races.Clear();
+                    newRacer.Races.ToList().ForEach(item => copy.Races.Add(item));
+                    copy.Rserie = newRacer.Rserie;
+                    copy.Sumwin = newRacer.Sumwin;
+                    copy.Nationality = newRacer.Nationality;
+                    copy.Rname = newRacer.Rname;
+                }
             }
 
             this.Ctx.SaveChanges();

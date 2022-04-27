@@ -6,6 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using RacersDB.Data.Models;
+using RacersDB.Logic;
+using RacersDB.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +29,21 @@ namespace RacersDB.Endpoint
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddControllers();
+
+            services.AddTransient<RaceTableContext>();
+
+            services.AddTransient<IRepository<Race>, IRaceRepository>();
+            services.AddTransient<IRepository<Racer>, IRacerRepository>();
+            services.AddTransient<IRepository<Racetrack>, IRacetrackRepository>();
+            services.AddTransient<IRaceRepository, RaceRepository>();
+            services.AddTransient<IRacerRepository, RacerRepository>();
+            services.AddTransient<IRacetrackRepository, RacetrackRepository>();
+
+            services.AddTransient<IGetLogic, GetLogic>();
+            services.AddTransient<ISetLogic, SetLogic>();
+
+            services.AddSignalR();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

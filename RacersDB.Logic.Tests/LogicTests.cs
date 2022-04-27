@@ -77,13 +77,13 @@ namespace RacersDB.Logic.Tests
         [Test]
         public void TestUpdateRaceWinnersID()
         {
-            this.mockedRaceRepo.Setup(repo => repo.ChangeWinnerId(It.IsAny<int>(), It.IsAny<int>())).Verifiable();
+            this.mockedRaceRepo.Setup(repo => repo.UpdateRace(It.IsAny<int>(), It.IsAny<int>())).Verifiable();
 
             SetLogic logic = new SetLogic(this.mockedRaceRepo.Object, this.mockedRacerRepo.Object, this.mockedRacetrackRepo.Object);
 
             logic.ChangeRaceWinnersID(It.IsAny<int>(), It.IsAny<int>());
 
-            this.mockedRaceRepo.Verify(x => x.ChangeWinnerId(It.IsAny<int>(), It.IsAny<int>()), Times.Once);
+            this.mockedRaceRepo.Verify(x => x.UpdateRace(It.IsAny<int>(), It.IsAny<int>()), Times.Once);
         }
 
         /// <summary>

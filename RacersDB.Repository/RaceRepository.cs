@@ -26,13 +26,23 @@ namespace RacersDB.Repository
         }
 
         /// <inheritdoc/>
-        public void ChangeWinnerId(int id, int newWinner)
+        public void UpdateRace(Race newRace)
         {
-            var copy = this.GetById(id);
-
-            if (copy != null)
+            if (newRace != null)
             {
-                copy.Winnerid = newWinner;
+                Race copy = this.GetById((int)newRace.Id);
+
+                if (copy != null)
+                {
+                    copy.Winner = newRace.Winner;
+                    copy.Winnerid = newRace.Winnerid;
+                    copy.Serie = newRace.Serie;
+                    copy.Rtrack = newRace.Rtrack;
+                    copy.Ryear = newRace.Ryear;
+                    copy.Sumlaps = newRace.Sumlaps;
+                    copy.Sumracers = newRace.Sumracers;
+                    copy.RtrackNavigation = newRace.RtrackNavigation;
+                }
             }
 
             this.Ctx.SaveChanges();

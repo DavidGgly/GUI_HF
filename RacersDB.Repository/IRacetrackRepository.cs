@@ -15,10 +15,9 @@ namespace RacersDB.Repository
     public interface IRacetrackRepository : IRepository<Racetrack>
     {
         /// <summary>
-        /// By calling this method, user is going to be able to change the name of a specific Racetrack.
+        /// By calling this method, user is going to be able to update a specific Racetrack.
         /// </summary>
-        /// <param name="id">The ID of Racetrack, user wants to modify.</param>
-        /// <param name="newName">The new name of the specific Racetrack.</param>
-        void ChangeName(int id, string newName);
+        /// <param name="newRacetrack">The new Racetrack.</param>
+        void UpdateRacetrack(Racetrack newRacetrack);
     }
 }

@@ -69,21 +69,21 @@ namespace RacersDB.Logic
         }
 
         /// <inheritdoc/>
-        public void ChangeRacetracksName(int racetrackID, string newName)
+        public void UpdateRace(Race newRace)
         {
-            this.racetrackRepo.ChangeName(racetrackID, newName);
+            this.raceRepo.UpdateRace(newRace);
         }
 
         /// <inheritdoc/>
-        public void ChangeRaceWinnersID(int raceID, int newWinnerID)
+        public void UpdateRacer(Racer newRacer)
         {
-            this.raceRepo.ChangeWinnerId(raceID, newWinnerID);
+            this.racerRepo.UpdateRacer(newRacer);
         }
 
         /// <inheritdoc/>
-        public void ChangeSumWin(int racerID, int newSumWin)
+        public void UpdateRacetrack(Racetrack newRacetrack)
         {
-            this.racerRepo.ChangeSumWin(racerID, newSumWin);
+            this.racetrackRepo.UpdateRacetrack(newRacetrack);
         }
     }
 }

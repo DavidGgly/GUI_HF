@@ -15,10 +15,9 @@ namespace RacersDB.Repository
     public interface IRacerRepository : IRepository<Racer>
     {
         /// <summary>
-        /// By calling this method, user is going to be able to change the sumwin property of a specific Racer.
+        /// By calling this method, user is going to be able to update a specific Racer.
         /// </summary>
-        /// <param name="id">The ID of Racer, user wants to modify.</param>
-        /// <param name="newSumWin">The new value of Racers number of winnings.</param>
-        void ChangeSumWin(int id, int newSumWin);
+        /// <param name="newRacer">The updated Racer.</param>
+        void UpdateRacer(Racer newRacer);
     }
 }

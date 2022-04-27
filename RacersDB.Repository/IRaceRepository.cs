@@ -15,10 +15,9 @@ namespace RacersDB.Repository
     public interface IRaceRepository : IRepository<Race>
     {
         /// <summary>
-        /// By calling this method, user is going to be able to change the winner of a specific Race.
+        /// By calling this method, user is going to be able to update a specific Race.
         /// </summary>
-        /// <param name="id">The ID of Race, user wants to modify.</param>
-        /// <param name="newWinner">The ID of the new Winner.</param>
-        void ChangeWinnerId(int id, int newWinner);
+        /// <param name="newWinner">The updated Winner.</param>
+        void UpdateRace(Race newWinner);
     }
 }

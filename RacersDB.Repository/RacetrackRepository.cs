@@ -26,13 +26,22 @@ namespace RacersDB.Repository
         }
 
         /// <inheritdoc/>
-        public void ChangeName(int id, string newName)
+        public void UpdateRacetrack(Racetrack newRacetrack)
         {
-            var copy = this.GetById(id);
-
-            if (copy != null)
+            if (newRacetrack != null)
             {
-                copy.Trackname = newName;
+                Racetrack copy = this.GetById((int)newRacetrack.Id);
+
+                if (copy != null)
+                {
+                    copy.Trackname = newRacetrack.Trackname;
+                    copy.Builtyear = newRacetrack.Builtyear;
+                    copy.Races.Clear();
+                    newRacetrack.Races.ToList().ForEach(item => copy.Races.Add(item));
+                    copy.Tvenue = newRacetrack.Tvenue;
+                    copy.Isf1 = newRacetrack.Isf1;
+                    copy.Tlength = newRacetrack.Tlength;
+                }
             }
 
             this.Ctx.SaveChanges();
