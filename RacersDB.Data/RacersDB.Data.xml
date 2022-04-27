@@ -46,12 +46,12 @@
         </member>
         <member name="P:RacersDB.Data.Models.Race.RtrackNavigation">
             <summary>
-            Gets the track, where this race was organized.
+            Gets or sets the track, where this race was organized.
             </summary>
         </member>
         <member name="P:RacersDB.Data.Models.Race.Winner">
             <summary>
-            Gets the Winner of this Race.
+            Gets or sets the Winner of this Race.
             </summary>
         </member>
         <member name="M:RacersDB.Data.Models.Race.Equals(System.Object)">

@@ -177,26 +177,23 @@
             </summary>
             <param name="raceToDel">This object is going to be deleted from the database.</param>
         </member>
-        <member name="M:RacersDB.Logic.ISetLogic.ChangeRaceWinnersID(System.Int32,System.Int32)">
+        <member name="M:RacersDB.Logic.ISetLogic.UpdateRace(RacersDB.Data.Models.Race)">
             <summary>
-            Changes the Winner's ID in a chosen Race.
+            Updates a chosen Race.
             </summary>
-            <param name="raceID">The ID of the Race, we would like to modify.</param>
-            <param name="newWinnerID">The ID of the new Winner.</param>
+            <param name="newRace">The updated Race.</param>
         </member>
-        <member name="M:RacersDB.Logic.ISetLogic.ChangeSumWin(System.Int32,System.Int32)">
+        <member name="M:RacersDB.Logic.ISetLogic.UpdateRacer(RacersDB.Data.Models.Racer)">
             <summary>
-            Changes the Racer's summary of winnings based on it's ID.
+            Updates a chosen Racer.
             </summary>
-            <param name="racerID">The ID of the Racer, we would like to modify.</param>
-            <param name="newSumWin">The new value of the chosen Racers SumWin property.</param>
+            <param name="newRacer">The updated Racer.</param>
         </member>
-        <member name="M:RacersDB.Logic.ISetLogic.ChangeRacetracksName(System.Int32,System.String)">
+        <member name="M:RacersDB.Logic.ISetLogic.UpdateRacetrack(RacersDB.Data.Models.Racetrack)">
             <summary>
-            Changes the name of a chosen Racetrack.
+            Updates a chosen Racetrack.
             </summary>
-            <param name="racetrackID">The ID of the Racetrack, we would like to modify.</param>
-            <param name="newName">The new name of the chosen Racetrack.</param>
+            <param name="newRacetrack">The updated Racetrack.</param>
         </member>
         <member name="T:RacersDB.Logic.RaceQuery">
             <summary>
@@ -356,13 +353,13 @@
         <member name="M:RacersDB.Logic.SetLogic.DeleteOldRacetrack(RacersDB.Data.Models.Racetrack)">
             <inheritdoc/>
         </member>
-        <member name="M:RacersDB.Logic.SetLogic.ChangeRacetracksName(System.Int32,System.String)">
+        <member name="M:RacersDB.Logic.SetLogic.UpdateRace(RacersDB.Data.Models.Race)">
             <inheritdoc/>
         </member>
-        <member name="M:RacersDB.Logic.SetLogic.ChangeRaceWinnersID(System.Int32,System.Int32)">
+        <member name="M:RacersDB.Logic.SetLogic.UpdateRacer(RacersDB.Data.Models.Racer)">
             <inheritdoc/>
         </member>
-        <member name="M:RacersDB.Logic.SetLogic.ChangeSumWin(System.Int32,System.Int32)">
+        <member name="M:RacersDB.Logic.SetLogic.UpdateRacetrack(RacersDB.Data.Models.Racetrack)">
             <inheritdoc/>
         </member>
     </members>

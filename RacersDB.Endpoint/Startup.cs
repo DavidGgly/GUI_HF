@@ -33,12 +33,12 @@ namespace RacersDB.Endpoint
 
             services.AddTransient<RaceTableContext>();
 
-            services.AddTransient<IRepository<Race>, IRaceRepository>();
-            services.AddTransient<IRepository<Racer>, IRacerRepository>();
-            services.AddTransient<IRepository<Racetrack>, IRacetrackRepository>();
-            services.AddTransient<IRaceRepository, RaceRepository>();
-            services.AddTransient<IRacerRepository, RacerRepository>();
-            services.AddTransient<IRacetrackRepository, RacetrackRepository>();
+            services.AddTransient<IRepository<Race>, RaceRepository>();
+            services.AddTransient<IRepository<Racer>, RacerRepository>();
+            services.AddTransient<IRepository<Racetrack>, RacetrackRepository>();
+            //services.AddTransient<IRaceRepository, RaceRepository>();
+            //services.AddTransient<IRacerRepository, RacerRepository>();
+            //services.AddTransient<IRacetrackRepository, RacetrackRepository>();
 
             services.AddTransient<IGetLogic, GetLogic>();
             services.AddTransient<ISetLogic, SetLogic>();

@@ -9,36 +9,33 @@
             Extending the generic IRepository interface to a specific interface.
             </summary>
         </member>
-        <member name="M:RacersDB.Repository.IRaceRepository.ChangeWinnerId(System.Int32,System.Int32)">
+        <member name="M:RacersDB.Repository.IRaceRepository.UpdateRace(RacersDB.Data.Models.Race)">
             <summary>
-            By calling this method, user is going to be able to change the winner of a specific Race.
+            By calling this method, user is going to be able to update a specific Race.
             </summary>
-            <param name="id">The ID of Race, user wants to modify.</param>
-            <param name="newWinner">The ID of the new Winner.</param>
+            <param name="newWinner">The updated Winner.</param>
         </member>
         <member name="T:RacersDB.Repository.IRacerRepository">
             <summary>
             Extending the generic IRepository interface to a specific interface.
             </summary>
         </member>
-        <member name="M:RacersDB.Repository.IRacerRepository.ChangeSumWin(System.Int32,System.Int32)">
+        <member name="M:RacersDB.Repository.IRacerRepository.UpdateRacer(RacersDB.Data.Models.Racer)">
             <summary>
-            By calling this method, user is going to be able to change the sumwin property of a specific Racer.
+            By calling this method, user is going to be able to update a specific Racer.
             </summary>
-            <param name="id">The ID of Racer, user wants to modify.</param>
-            <param name="newSumWin">The new value of Racers number of winnings.</param>
+            <param name="newRacer">The updated Racer.</param>
         </member>
         <member name="T:RacersDB.Repository.IRacetrackRepository">
             <summary>
             Extending the generic IRepository interface to a specific interface.
             </summary>
         </member>
-        <member name="M:RacersDB.Repository.IRacetrackRepository.ChangeName(System.Int32,System.String)">
+        <member name="M:RacersDB.Repository.IRacetrackRepository.UpdateRacetrack(RacersDB.Data.Models.Racetrack)">
             <summary>
-            By calling this method, user is going to be able to change the name of a specific Racetrack.
+            By calling this method, user is going to be able to update a specific Racetrack.
             </summary>
-            <param name="id">The ID of Racetrack, user wants to modify.</param>
-            <param name="newName">The new name of the specific Racetrack.</param>
+            <param name="newRacetrack">The new Racetrack.</param>
         </member>
         <member name="T:RacersDB.Repository.IRepository`1">
             <summary>
@@ -124,7 +121,7 @@
             </summary>
             <param name="ctx">DbContext type parameter.</param>
         </member>
-        <member name="M:RacersDB.Repository.RaceRepository.ChangeWinnerId(System.Int32,System.Int32)">
+        <member name="M:RacersDB.Repository.RaceRepository.UpdateRace(RacersDB.Data.Models.Race)">
             <inheritdoc/>
         </member>
         <member name="M:RacersDB.Repository.RaceRepository.GetById(System.Int32)">
@@ -141,7 +138,7 @@
             </summary>
             <param name="ctx">DbContext type parameter.</param>
         </member>
-        <member name="M:RacersDB.Repository.RacerRepository.ChangeSumWin(System.Int32,System.Int32)">
+        <member name="M:RacersDB.Repository.RacerRepository.UpdateRacer(RacersDB.Data.Models.Racer)">
             <inheritdoc/>
         </member>
         <member name="M:RacersDB.Repository.RacerRepository.GetById(System.Int32)">
@@ -158,7 +155,7 @@
             </summary>
             <param name="ctx">DbContext type parameter.</param>
         </member>
-        <member name="M:RacersDB.Repository.RacetrackRepository.ChangeName(System.Int32,System.String)">
+        <member name="M:RacersDB.Repository.RacetrackRepository.UpdateRacetrack(RacersDB.Data.Models.Racetrack)">
             <inheritdoc/>
         </member>
         <member name="M:RacersDB.Repository.RacetrackRepository.GetById(System.Int32)">
