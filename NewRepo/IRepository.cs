@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RacersDB.NewRepo
 {
-    internal interface IRepository<T> where T : class
+    public interface IRepository<T> where T : class
     {
         public void AddNew(T newInstance);
         public void DeleteOld(T oldInstance);

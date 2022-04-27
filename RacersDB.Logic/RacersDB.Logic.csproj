@@ -21,8 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NewRepo\RacersDB.NewRepo.csproj" />
     <ProjectReference Include="..\RacersDB.Data\RacersDB.Data.csproj" />
-    <ProjectReference Include="..\RacersDB.Repository\RacersDB.Repository.csproj" />
   </ItemGroup>
 
 </Project>

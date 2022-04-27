@@ -41,7 +41,7 @@ async function getdata() {
         .then(x => x.json())
         .then(y => {
             racers = y;
-            //console.log(racers);
+            console.log("racers", racers);
             display();
         });
 }
@@ -50,9 +50,9 @@ function display() {
     document.getElementById('resultarea').innerHTML = "";
     racers.forEach(t => {
         document.getElementById('resultarea').innerHTML +=
-            "<tr><td>" + t.Id + "</td><td>"
-            + t.Rname + "</td><td>" +
-            `<button type="button" onclick="remove(${t.Id})">Delete</button>`
+            "<tr><td>" + t.id + "</td><td>"
+            + t.rname + "</td><td>" +
+            `<button type="button" onclick="remove(${t.id})">Delete</button>`
             + "</td></tr>";
     });
 }
@@ -78,7 +78,7 @@ function create() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', },
         body: JSON.stringify(
-            { racerName: name })
+            { rname: name })
     })
         .then(response => response)
         .then(data => {

@@ -9,7 +9,7 @@
             This class implements IGetLogic interface.
             </summary>
         </member>
-        <member name="M:RacersDB.Logic.GetLogic.#ctor(RacersDB.Repository.IRaceRepository,RacersDB.Repository.IRacerRepository,RacersDB.Repository.IRacetrackRepository)">
+        <member name="M:RacersDB.Logic.GetLogic.#ctor(RacersDB.NewRepo.IRepository{RacersDB.Data.Models.Race},RacersDB.NewRepo.IRepository{RacersDB.Data.Models.Racer},RacersDB.NewRepo.IRepository{RacersDB.Data.Models.Racetrack})">
             <summary>
             Initializes a new instance of the <see cref="T:RacersDB.Logic.GetLogic"/> class.
             </summary>
@@ -327,7 +327,7 @@
             This class implements ISetLogic interface.
             </summary>
         </member>
-        <member name="M:RacersDB.Logic.SetLogic.#ctor(RacersDB.Repository.IRaceRepository,RacersDB.Repository.IRacerRepository,RacersDB.Repository.IRacetrackRepository)">
+        <member name="M:RacersDB.Logic.SetLogic.#ctor(RacersDB.NewRepo.IRepository{RacersDB.Data.Models.Race},RacersDB.NewRepo.IRepository{RacersDB.Data.Models.Racer},RacersDB.NewRepo.IRepository{RacersDB.Data.Models.Racetrack})">
             <summary>
             Initializes a new instance of the <see cref="T:RacersDB.Logic.SetLogic"/> class.
             </summary>

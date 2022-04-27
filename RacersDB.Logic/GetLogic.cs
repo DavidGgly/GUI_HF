@@ -10,16 +10,16 @@ namespace RacersDB.Logic
     using System.Text;
     using System.Threading.Tasks;
     using RacersDB.Data.Models;
-    using RacersDB.Repository;
+    using RacersDB.NewRepo;
 
     /// <summary>
     /// This class implements IGetLogic interface.
     /// </summary>
     public class GetLogic : IGetLogic
     {
-        private readonly IRaceRepository raceRepo;
-        private readonly IRacerRepository racerRepo;
-        private readonly IRacetrackRepository racetrackRepo;
+        private readonly IRepository<Race> raceRepo;
+        private readonly IRepository<Racer> racerRepo;
+        private readonly IRepository<Racetrack> racetrackRepo;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GetLogic"/> class.
@@ -27,7 +27,7 @@ namespace RacersDB.Logic
         /// <param name="raceRepo">Interface raceRepo typed parameter because of dependency injection.</param>
         /// <param name="racerRepo">Interface racerRepo typed parameter because of dependency injection.</param>
         /// <param name="racetrackRepo">Interface racetrackRepo typed parameter because of dependency injection.</param>
-        public GetLogic(IRaceRepository raceRepo, IRacerRepository racerRepo, IRacetrackRepository racetrackRepo)
+        public GetLogic(IRepository<Race> raceRepo, IRepository<Racer> racerRepo, IRepository<Racetrack> racetrackRepo)
         {
             this.raceRepo = raceRepo;
             this.racerRepo = racerRepo;

@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -7,8 +9,9 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using RacersDB.Data.Models;
+using RacersDB.Endpoint.Services;
 using RacersDB.Logic;
-using RacersDB.Repository;
+using RacersDB.NewRepo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,14 +31,11 @@ namespace RacersDB.Endpoint
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddTransient<RaceTableContext>();
 
-            services.AddControllers();
-
-            services.AddTransient<RaceTableContext>();
-
-            services.AddTransient<IRepository<Race>, RaceRepository>();
-            services.AddTransient<IRepository<Racer>, RacerRepository>();
-            services.AddTransient<IRepository<Racetrack>, RacetrackRepository>();
+            services.AddSingleton<IRepository<Race>, RaceRepository>();
+            services.AddSingleton<IRepository<Racer>, RacerRepository>();
+            services.AddSingleton<IRepository<Racetrack>, RacetrackRepository>();
             //services.AddTransient<IRaceRepository, RaceRepository>();
             //services.AddTransient<IRacerRepository, RacerRepository>();
             //services.AddTransient<IRacetrackRepository, RacetrackRepository>();
@@ -61,6 +61,21 @@ namespace RacersDB.Endpoint
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "RacersDB.Endpoint v1"));
             }
 
+            app.UseExceptionHandler(c => c.Run(async context =>
+            {
+                var exception = context.Features
+                    .Get<IExceptionHandlerPathFeature>()
+                    .Error;
+                var response = new { Msg = exception.Message };
+                await context.Response.WriteAsJsonAsync(response);
+            }));
+
+            app.UseCors(x => x
+                .AllowCredentials()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .WithOrigins("http://localhost:49490"));
+
             app.UseRouting();
 
             app.UseAuthorization();
@@ -68,6 +83,7 @@ namespace RacersDB.Endpoint
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<SignalRHub>("/hub");
             });
         }
     }

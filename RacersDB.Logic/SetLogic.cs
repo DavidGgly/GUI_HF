@@ -8,16 +8,16 @@ namespace RacersDB.Logic
     using System.Collections.Generic;
     using System.Text;
     using RacersDB.Data.Models;
-    using RacersDB.Repository;
+    using RacersDB.NewRepo;
 
     /// <summary>
     /// This class implements ISetLogic interface.
     /// </summary>
     public class SetLogic : ISetLogic
     {
-        private readonly IRaceRepository raceRepo;
-        private readonly IRacerRepository racerRepo;
-        private readonly IRacetrackRepository racetrackRepo;
+        private readonly IRepository<Race> raceRepo;
+        private readonly IRepository<Racer> racerRepo;
+        private readonly IRepository<Racetrack> racetrackRepo;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SetLogic"/> class.
@@ -25,7 +25,7 @@ namespace RacersDB.Logic
         /// <param name="raceRepo">Interface raceRepo typed parameter because of dependency injection.</param>
         /// <param name="racerRepo">Interface racerRepo typed parameter because of dependency injection.</param>
         /// <param name="racetrackRepo">Interface racetrackRepo typed parameter because of dependency injection.</param>
-        public SetLogic(IRaceRepository raceRepo, IRacerRepository racerRepo, IRacetrackRepository racetrackRepo)
+        public SetLogic(IRepository<Race> raceRepo, IRepository<Racer> racerRepo, IRepository<Racetrack> racetrackRepo)
         {
             this.raceRepo = raceRepo;
             this.racerRepo = racerRepo;
@@ -71,19 +71,19 @@ namespace RacersDB.Logic
         /// <inheritdoc/>
         public void UpdateRace(Race newRace)
         {
-            this.raceRepo.UpdateRace(newRace);
+            this.raceRepo.UpdateEntity(newRace);
         }
 
         /// <inheritdoc/>
         public void UpdateRacer(Racer newRacer)
         {
-            this.racerRepo.UpdateRacer(newRacer);
+            this.racerRepo.UpdateEntity(newRacer);
         }
 
         /// <inheritdoc/>
         public void UpdateRacetrack(Racetrack newRacetrack)
         {
-            this.racetrackRepo.UpdateRacetrack(newRacetrack);
+            this.racetrackRepo.UpdateEntity(newRacetrack);
         }
     }
 }
