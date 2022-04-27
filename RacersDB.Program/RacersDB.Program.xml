@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RacersDB.Program</name>
+    </assembly>
+    <members>
+        <member name="T:RacersDB.Program.Factory">
+            <summary>
+            This class is responsible to create and share the class instances.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Program.Factory.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RacersDB.Program.Factory"/> class.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Program.Factory.GetLogic">
+            <summary>
+            Gets a GetLogic instance, which contains methods, which are reading from the DB.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Program.Factory.SetLogic">
+            <summary>
+            Gets a SetLogic instance, which contains methods, which are modifying data in DB.
+            </summary>
+        </member>
+        <member name="T:RacersDB.Program.Functionality">
+            <summary>
+            This class contains all methods, which user can call by ConsoleMenu.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Program.Functionality.AddNewRace(RacersDB.Logic.GetLogic,RacersDB.Logic.SetLogic)">
+            <summary>
+            Adding new Race instance to the database.
+            </summary>
+            <param name="gLogic">This parameter represents the GetLogic class.</param>
+            <param name="sLogic">This parameter represents the SetLogic class.</param>
+        </member>
+        <member name="M:RacersDB.Program.Functionality.AddNewRacer(RacersDB.Logic.GetLogic,RacersDB.Logic.SetLogic)">
+            <summary>
+            Adding new Racer instance to the database.
+            </summary>
+            <param name="gLogic">This parameter represents the GetLogic class.</param>
+            <param name="sLogic">This parameter represents the SetLogic class.</param>
+        </member>
+        <member name="M:RacersDB.Program.Functionality.AddNewRacetrack(RacersDB.Logic.GetLogic,RacersDB.Logic.SetLogic)">
+            <summary>
+            Adding new Racetrack instance to the database.
+            </summary>
+            <param name="gLogic">This parameter represents the GetLogic class.</param>
+            <param name="sLogic">This parameter represents the SetLogic class.</param>
+        </member>
+        <member name="M:RacersDB.Program.Functionality.DeleteOldRace(RacersDB.Logic.GetLogic,RacersDB.Logic.SetLogic)">
+            <summary>
+            Deleting old Race instance from the database.
+            </summary>
+            <param name="gLogic">This parameter represents the GetLogic class.</param>
+            <param name="sLogic">This parameter represents the SetLogic class.</param>
+        </member>
+        <member name="M:RacersDB.Program.Functionality.DeleteOldRacer(RacersDB.Logic.GetLogic,RacersDB.Logic.SetLogic)">
+            <summary>
+            Deleting old Racer instance from the database.
+            </summary>
+            <param name="gLogic">This parameter represents the GetLogic class.</param>
+            <param name="sLogic">This parameter represents the SetLogic class.</param>
+        </member>
+        <member name="M:RacersDB.Program.Functionality.DeleteOldRacetrack(RacersDB.Logic.GetLogic,RacersDB.Logic.SetLogic)">
+            <summary>
+            Deleting old Racetrack instance from the database.
+            </summary>
+            <param name="gLogic">This parameter represents the GetLogic class.</param>
+            <param name="sLogic">This parameter represents the SetLogic class.</param>
+        </member>
+        <member name="M:RacersDB.Program.Functionality.GetOneRace(RacersDB.Logic.GetLogic)">
+            <summary>
+            Returns that Race instance, which id is equal to what user types in.
+            </summary>
+            <param name="logic">This parameter represents the GetLogic class.</param>
+        </member>
+        <member name="M:RacersDB.Program.Functionality.GetOneRacer(RacersDB.Logic.GetLogic)">
+            <summary>
+            Returns that Racer instance, which id is equal to what user types in.
+            </summary>
+            <param name="logic">This parameter represents the GetLogic class.</param>
+        </member>
+        <member name="M:RacersDB.Program.Functionality.GetOneRacetrack(RacersDB.Logic.GetLogic)">
+            <summary>
+            Returns that Racetrack instance, which id is equal to what user types in.
+            </summary>
+            <param name="logic">This parameter represents the GetLogic class.</param>
+        </member>
+        <member name="M:RacersDB.Program.Functionality.GetAllRaces(RacersDB.Logic.GetLogic)">
+            <summary>
+            Returns all Race instances and all it's properties, in order.
+            </summary>
+            <param name="logic">This parameter represents the GetLogic class.</param>
+        </member>
+        <member name="M:RacersDB.Program.Functionality.GetAllRacers(RacersDB.Logic.GetLogic)">
+            <summary>
+            Returns all Racer instances and all it's properties, in order.
+            </summary>
+            <param name="logic">This parameter represents the GetLogic class.</param>
+        </member>
+        <member name="M:RacersDB.Program.Functionality.GetAllRacetracks(RacersDB.Logic.GetLogic)">
+            <summary>
+            Returns all Racetrack instances and all it's properties, in order.
+            </summary>
+            <param name="logic">This parameter represents the GetLogic class.</param>
+        </member>
+        <member name="M:RacersDB.Program.Functionality.ChangeRaceWinnersID(RacersDB.Logic.GetLogic,RacersDB.Logic.SetLogic)">
+            <summary>
+            Changes the Winner's ID in a chosen Race.
+            </summary>
+            <param name="gLogic">This parameter represents the GetLogic class.</param>
+            <param name="sLogic">This parameter represents the SetLogic class.</param>
+        </member>
+        <member name="M:RacersDB.Program.Functionality.ChangeSumWin(RacersDB.Logic.GetLogic,RacersDB.Logic.SetLogic)">
+            <summary>
+            Changes the Racer's summary of winnings based on it's ID.
+            </summary>
+            <param name="gLogic">This parameter represents the GetLogic class.</param>
+            <param name="sLogic">This parameter represents the SetLogic class.</param>
+        </member>
+        <member name="M:RacersDB.Program.Functionality.ChangeRacetracksName(RacersDB.Logic.GetLogic,RacersDB.Logic.SetLogic)">
+            <summary>
+            Changes the name of a chosen Racetrack.
+            </summary>
+            <param name="gLogic">This parameter represents the GetLogic class.</param>
+            <param name="sLogic">This parameter represents the SetLogic class.</param>
+        </member>
+        <member name="M:RacersDB.Program.Functionality.RaceQuery(RacersDB.Logic.GetLogic)">
+            <summary>
+            This method returns some data about the Races, where the venue of the Race and the winner's
+            nationality equals.
+            </summary>
+            <param name="gLogic">This parameter represents the GetLogic class.</param>
+        </member>
+        <member name="M:RacersDB.Program.Functionality.RaceQueryASync(RacersDB.Logic.GetLogic)">
+            <summary>
+            This method is the ASync version of GetRaceQuery method.
+            </summary>
+            <param name="gLogic">This parameter represents the GetLogic class.</param>
+        </member>
+        <member name="M:RacersDB.Program.Functionality.RacerQuery(RacersDB.Logic.GetLogic)">
+            <summary>
+            This method returns all data of the Racers, who was born the same year as a Racetrack was built.
+            This list is ordered by the name of Racetracks.
+            </summary>
+            <param name="gLogic">This parameter represents the GetLogic class.</param>
+        </member>
+        <member name="M:RacersDB.Program.Functionality.RacerQueryASync(RacersDB.Logic.GetLogic)">
+            <summary>
+            This method is the ASync version of GetRacerQuery method.
+            </summary>
+            <param name="gLogic">This parameter represents the GetLogic class.</param>
+        </member>
+        <member name="M:RacersDB.Program.Functionality.RacetrackQuery(RacersDB.Logic.GetLogic)">
+            <summary>
+            This method collects all data of all Racetracks and sorts descending
+            based on the amount of Races organized on each Racetracks.
+            </summary>
+            <param name="gLogic">This parameter represents the GetLogic class.</param>
+        </member>
+        <member name="M:RacersDB.Program.Functionality.RacetrackQueryASync(RacersDB.Logic.GetLogic)">
+            <summary>
+            This method is the ASync version of GetRacetrackQuery method.
+            </summary>
+            <param name="gLogic">This parameter represents the GetLogic class.</param>
+        </member>
+        <member name="M:RacersDB.Program.Functionality.ConsoleWrite(System.String,System.Boolean)">
+            <summary>
+            This method is the default WriteLine() method, used by all of this methods, inside class.
+            </summary>
+            <param name="stringToWrite">This is the string, which will be wrote to the screen.</param>
+            <param name="breakLine">If this bool is true, the method breaks the line after WriteLine, if it's false, then not.</param>
+        </member>
+        <member name="T:RacersDB.Program.MainProgram">
+            <summary>
+            The main program.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Program.MainProgram.Main">
+            <summary>
+            The main method.
+            </summary>
+        </member>
+        <member name="T:RacersDB.Program.Menu">
+            <summary>
+            This class contains the exact ConsoleMenu, which is visible to user.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Program.Menu.#ctor(RacersDB.Program.Functionality,RacersDB.Logic.GetLogic,RacersDB.Logic.SetLogic)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RacersDB.Program.Menu"/> class.
+            </summary>
+            <param name="func">This parameter contains the methods, which can be called by the ConsoleMenu.</param>
+            <param name="gLogic">This parameter represents the GetLogic class.</param>
+            <param name="sLogic">This parameter represents the SetLogic class.</param>
+        </member>
+        <member name="M:RacersDB.Program.Menu.ConsoleMainMenu">
+            <summary>
+            This method contains the exact ConsoleMenu, which is visible to the user.
+            </summary>
+        </member>
+    </members>
+</doc>

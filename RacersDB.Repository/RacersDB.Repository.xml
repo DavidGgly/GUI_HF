@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RacersDB.Repository</name>
+    </assembly>
+    <members>
+        <member name="T:RacersDB.Repository.IRaceRepository">
+            <summary>
+            Extending the generic IRepository interface to a specific interface.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Repository.IRaceRepository.ChangeWinnerId(System.Int32,System.Int32)">
+            <summary>
+            By calling this method, user is going to be able to change the winner of a specific Race.
+            </summary>
+            <param name="id">The ID of Race, user wants to modify.</param>
+            <param name="newWinner">The ID of the new Winner.</param>
+        </member>
+        <member name="T:RacersDB.Repository.IRacerRepository">
+            <summary>
+            Extending the generic IRepository interface to a specific interface.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Repository.IRacerRepository.ChangeSumWin(System.Int32,System.Int32)">
+            <summary>
+            By calling this method, user is going to be able to change the sumwin property of a specific Racer.
+            </summary>
+            <param name="id">The ID of Racer, user wants to modify.</param>
+            <param name="newSumWin">The new value of Racers number of winnings.</param>
+        </member>
+        <member name="T:RacersDB.Repository.IRacetrackRepository">
+            <summary>
+            Extending the generic IRepository interface to a specific interface.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Repository.IRacetrackRepository.ChangeName(System.Int32,System.String)">
+            <summary>
+            By calling this method, user is going to be able to change the name of a specific Racetrack.
+            </summary>
+            <param name="id">The ID of Racetrack, user wants to modify.</param>
+            <param name="newName">The new name of the specific Racetrack.</param>
+        </member>
+        <member name="T:RacersDB.Repository.IRepository`1">
+            <summary>
+            Hides Data layer.
+            </summary>
+            <typeparam name="T">It can be Race/Racer or Racetrack class.</typeparam>
+        </member>
+        <member name="M:RacersDB.Repository.IRepository`1.AddNew(`0)">
+            <summary>
+            Adding new instance to the database, type of T.
+            </summary>
+            <param name="newInstance">The type T object, which is going to be added to the DB.</param>
+        </member>
+        <member name="M:RacersDB.Repository.IRepository`1.DeleteOld(`0)">
+            <summary>
+            Deleting an old instance from the database, based on the ID of the element.
+            </summary>
+            <param name="oldInstance">The instance, which should be deleted from the DB.</param>
+        </member>
+        <member name="M:RacersDB.Repository.IRepository`1.GetAll">
+            <summary>
+            Returns a reference to all instances in database, type T.
+            </summary>
+            <returns>An IQueryable type, which can be read by a foreach loop, for example.</returns>
+        </member>
+        <member name="M:RacersDB.Repository.IRepository`1.GetById(System.Int32)">
+            <summary>
+            Returns a T type instance, which ID equals the parameter.
+            </summary>
+            <param name="id">This is the ID, we're looking for.</param>
+            <returns>Returns a T type instance.</returns>
+        </member>
+        <member name="T:RacersDB.Repository.MainRepository`1">
+            <summary>
+            This is the main Repository layer class.
+            </summary>
+            <typeparam name="T">It is a T generic type.</typeparam>
+        </member>
+        <member name="M:RacersDB.Repository.MainRepository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RacersDB.Repository.MainRepository`1"/> class.
+            </summary>
+            <param name="ctx">DbContext type.</param>
+        </member>
+        <member name="P:RacersDB.Repository.MainRepository`1.Ctx">
+            <summary>
+            Gets or sets the DbContext type Context, which we are working on.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Repository.MainRepository`1.AddNew(`0)">
+            <summary>
+            Adding new instance to the database, type of T.
+            </summary>
+            <param name="newInstance">The exact instance, we'd like to add.</param>
+        </member>
+        <member name="M:RacersDB.Repository.MainRepository`1.DeleteOld(`0)">
+            <summary>
+            Deleting an old instance from the database, type of T.
+            </summary>
+            <param name="oldInstance">The exact instance, we'd like to delete.</param>
+        </member>
+        <member name="M:RacersDB.Repository.MainRepository`1.GetAll">
+            <summary>
+            Returns the IQueryable value of T generic type's database..
+            </summary>
+            <returns>Returns an IQueryable type Set of T generic type's database.</returns>
+        </member>
+        <member name="M:RacersDB.Repository.MainRepository`1.GetById(System.Int32)">
+            <summary>
+            Returns a T type instance, which ID equals the parameter.
+            </summary>
+            <param name="id">This is the ID, we're looking for.</param>
+            <returns>Returns a T type instance.</returns>
+        </member>
+        <member name="T:RacersDB.Repository.RaceRepository">
+            <summary>
+            RaceRepository class.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Repository.RaceRepository.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RacersDB.Repository.RaceRepository"/> class.
+            </summary>
+            <param name="ctx">DbContext type parameter.</param>
+        </member>
+        <member name="M:RacersDB.Repository.RaceRepository.ChangeWinnerId(System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Repository.RaceRepository.GetById(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="T:RacersDB.Repository.RacerRepository">
+            <summary>
+            RacerRepository class.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Repository.RacerRepository.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RacersDB.Repository.RacerRepository"/> class.
+            </summary>
+            <param name="ctx">DbContext type parameter.</param>
+        </member>
+        <member name="M:RacersDB.Repository.RacerRepository.ChangeSumWin(System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Repository.RacerRepository.GetById(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="T:RacersDB.Repository.RacetrackRepository">
+            <summary>
+            RacetrackRepository class.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Repository.RacetrackRepository.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RacersDB.Repository.RacetrackRepository"/> class.
+            </summary>
+            <param name="ctx">DbContext type parameter.</param>
+        </member>
+        <member name="M:RacersDB.Repository.RacetrackRepository.ChangeName(System.Int32,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Repository.RacetrackRepository.GetById(System.Int32)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

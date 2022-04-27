@@ -1,0 +1,369 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RacersDB.Logic</name>
+    </assembly>
+    <members>
+        <member name="T:RacersDB.Logic.GetLogic">
+            <summary>
+            This class implements IGetLogic interface.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Logic.GetLogic.#ctor(RacersDB.Repository.IRaceRepository,RacersDB.Repository.IRacerRepository,RacersDB.Repository.IRacetrackRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RacersDB.Logic.GetLogic"/> class.
+            </summary>
+            <param name="raceRepo">Interface raceRepo typed parameter because of dependency injection.</param>
+            <param name="racerRepo">Interface racerRepo typed parameter because of dependency injection.</param>
+            <param name="racetrackRepo">Interface racetrackRepo typed parameter because of dependency injection.</param>
+        </member>
+        <member name="M:RacersDB.Logic.GetLogic.GetAllRacers">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Logic.GetLogic.GetAllRaces">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Logic.GetLogic.GetAllRacetracks">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Logic.GetLogic.GetOneRace(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Logic.GetLogic.GetOneRacer(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Logic.GetLogic.GetOneRacetrack(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Logic.GetLogic.GetRaceQuery">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Logic.GetLogic.GetRaceQueryASync">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Logic.GetLogic.GetRacerQuery">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Logic.GetLogic.GetRacerQueryASync">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Logic.GetLogic.GetRacetrackQuery">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Logic.GetLogic.GetRacetrackQueryASync">
+            <inheritdoc/>
+        </member>
+        <member name="T:RacersDB.Logic.IGetLogic">
+            <summary>
+            This interface collect all the methods, which are just reading data from the DB.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Logic.IGetLogic.GetOneRace(System.Int32)">
+            <summary>
+            Searches in the DB for that Race instance, which id equals with parameter.
+            </summary>
+            <param name="id">The ID, which method is searching for.</param>
+            <returns>A Race instance, which ID equals with parameter.</returns>
+        </member>
+        <member name="M:RacersDB.Logic.IGetLogic.GetAllRaces">
+            <summary>
+            Puts all Races in an IList.
+            </summary>
+            <returns>Returns an IList, which contains all Races in the DB.</returns>
+        </member>
+        <member name="M:RacersDB.Logic.IGetLogic.GetOneRacer(System.Int32)">
+            <summary>
+            Searches in the DB for that Racer instance, which ID equals with parameter.
+            </summary>
+            <param name="id">The ID, which method is searching for.</param>
+            <returns>A Racer instance, which ID equals with parameter.</returns>
+        </member>
+        <member name="M:RacersDB.Logic.IGetLogic.GetAllRacers">
+            <summary>
+            Puts all Racers in an IList.
+            </summary>
+            <returns>Returns an IList, which contains all Racers in the DB.</returns>
+        </member>
+        <member name="M:RacersDB.Logic.IGetLogic.GetOneRacetrack(System.Int32)">
+            <summary>
+            Searches in the DB for that Racetrack instance, which id equals with parameter.
+            </summary>
+            <param name="id">The ID, which method is searching for.</param>
+            <returns>A Racetrack instance, which ID equals with parameter.</returns>
+        </member>
+        <member name="M:RacersDB.Logic.IGetLogic.GetAllRacetracks">
+            <summary>
+            Puts all Racetracks in an IList.
+            </summary>
+            <returns>Returns an IList, which contains all Racetracks in the DB.</returns>
+        </member>
+        <member name="M:RacersDB.Logic.IGetLogic.GetRacetrackQuery">
+            <summary>
+            This method collects all data of all Racetracks and sorts descending
+            based on the amount of Races organized on each Racetracks.
+            </summary>
+            <returns>An IList filled with these Racetracks.</returns>
+        </member>
+        <member name="M:RacersDB.Logic.IGetLogic.GetRacetrackQueryASync">
+            <summary>
+            This method is the ASync version of GetRacetrackQuery method.
+            </summary>
+            <returns>The same IList, as GetRacetrackQuery, but packed in a task.</returns>
+        </member>
+        <member name="M:RacersDB.Logic.IGetLogic.GetRacerQuery">
+            <summary>
+            This method returns all data of the Racers, who was born the same year as a Racetrack was built.
+            This list is ordered by the name of Racetracks.
+            </summary>
+            <returns>An IList filled with these Racers.</returns>
+        </member>
+        <member name="M:RacersDB.Logic.IGetLogic.GetRacerQueryASync">
+            <summary>
+            This method is the ASync version of GetRacerQuery method.
+            </summary>
+            <returns>The same IList, as GetRacerQuery, but packed in a task.</returns>
+        </member>
+        <member name="M:RacersDB.Logic.IGetLogic.GetRaceQuery">
+            <summary>
+            This method returns some data about the Races, where the venue of the Race and the winner's
+            nationality equals.
+            </summary>
+            <returns>An IList filled with these Races.</returns>
+        </member>
+        <member name="M:RacersDB.Logic.IGetLogic.GetRaceQueryASync">
+            <summary>
+            This method is the ASync version of GetRaceQuery method.
+            </summary>
+            <returns>The same IList, as GetRaceQuery, but packed in a task.</returns>
+        </member>
+        <member name="T:RacersDB.Logic.ISetLogic">
+            <summary>
+            This interface collect all the methods, which are modifying data in the DB.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Logic.ISetLogic.AddNewRace(RacersDB.Data.Models.Race)">
+            <summary>
+            Adding new Race to the database.
+            </summary>
+            <param name="newRace">This object is going to be added to the database.</param>
+        </member>
+        <member name="M:RacersDB.Logic.ISetLogic.AddNewRacer(RacersDB.Data.Models.Racer)">
+            <summary>
+            Adding new Racer to the database.
+            </summary>
+            <param name="newRacer">This object is going to be added to the database.</param>
+        </member>
+        <member name="M:RacersDB.Logic.ISetLogic.AddNewRacetrack(RacersDB.Data.Models.Racetrack)">
+            <summary>
+            Adding new Racetrack to the database.
+            </summary>
+            <param name="newRacetrack">This object is going to be added to the database.</param>
+        </member>
+        <member name="M:RacersDB.Logic.ISetLogic.DeleteOldRace(RacersDB.Data.Models.Race)">
+            <summary>
+            Deleting old Race from the database.
+            </summary>
+            <param name="raceToDel">This object is going to be deleted from the database.</param>
+        </member>
+        <member name="M:RacersDB.Logic.ISetLogic.DeleteOldRacer(RacersDB.Data.Models.Racer)">
+            <summary>
+            Deleting old Racer from the database.
+            </summary>
+            <param name="raceToDel">This object is going to be deleted from the database.</param>
+        </member>
+        <member name="M:RacersDB.Logic.ISetLogic.DeleteOldRacetrack(RacersDB.Data.Models.Racetrack)">
+            <summary>
+            Deleting old Racetrack from the database.
+            </summary>
+            <param name="raceToDel">This object is going to be deleted from the database.</param>
+        </member>
+        <member name="M:RacersDB.Logic.ISetLogic.ChangeRaceWinnersID(System.Int32,System.Int32)">
+            <summary>
+            Changes the Winner's ID in a chosen Race.
+            </summary>
+            <param name="raceID">The ID of the Race, we would like to modify.</param>
+            <param name="newWinnerID">The ID of the new Winner.</param>
+        </member>
+        <member name="M:RacersDB.Logic.ISetLogic.ChangeSumWin(System.Int32,System.Int32)">
+            <summary>
+            Changes the Racer's summary of winnings based on it's ID.
+            </summary>
+            <param name="racerID">The ID of the Racer, we would like to modify.</param>
+            <param name="newSumWin">The new value of the chosen Racers SumWin property.</param>
+        </member>
+        <member name="M:RacersDB.Logic.ISetLogic.ChangeRacetracksName(System.Int32,System.String)">
+            <summary>
+            Changes the name of a chosen Racetrack.
+            </summary>
+            <param name="racetrackID">The ID of the Racetrack, we would like to modify.</param>
+            <param name="newName">The new name of the chosen Racetrack.</param>
+        </member>
+        <member name="T:RacersDB.Logic.RaceQuery">
+            <summary>
+            This class can be used as return type of LINQ queries.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Logic.RaceQuery.Country">
+            <summary>
+            Gets or sets the country, where the Race was organized / the Racer is from.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Logic.RaceQuery.RacerName">
+            <summary>
+            Gets or sets the Racer's full name.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Logic.RaceQuery.RacerAgeThen">
+            <summary>
+            Gets or sets the Racer's age when the Race happened.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Logic.RaceQuery.RacetrackName">
+            <summary>
+            Gets or sets the name of the Racetrack, where the Race was organized.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Logic.RaceQuery.RaceID">
+            <summary>
+            Gets or sets the ID in the Race table of this exact Race.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Logic.RaceQuery.RaceYear">
+            <summary>
+            Gets or sets the year, when this Race was organized.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Logic.RaceQuery.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Logic.RaceQuery.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Logic.RaceQuery.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:RacersDB.Logic.RacerQuery">
+            <summary>
+            This class can be used as return type of LINQ queries.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Logic.RacerQuery.RacerName">
+            <summary>
+            Gets or sets the Racer's full name.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Logic.RacerQuery.RacerAge">
+            <summary>
+            Gets or sets the Racer's age.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Logic.RacerQuery.RacerNationality">
+            <summary>
+            Gets or sets the Racer's nationality.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Logic.RacerQuery.RacetrackName">
+            <summary>
+            Gets or sets the name of the Racetrack.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Logic.RacerQuery.RacetrackBuiltYear">
+            <summary>
+            Gets or sets the year, when that exact Racetrack was built.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Logic.RacerQuery.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Logic.RacerQuery.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Logic.RacerQuery.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:RacersDB.Logic.RacetrackQuery">
+            <summary>
+            This class can be used as return type of LINQ queries.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Logic.RacetrackQuery.TrackName">
+            <summary>
+            Gets or sets the name of the Racetrack.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Logic.RacetrackQuery.SumRaces">
+            <summary>
+            Gets or sets, how much Races were organized on that exact Racetrack already.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Logic.RacetrackQuery.BuiltYear">
+            <summary>
+            Gets or sets, when that exact Racetrack was built.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Logic.RacetrackQuery.TrackLength">
+            <summary>
+            Gets or sets the Racetrack's exact length in metres.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Logic.RacetrackQuery.TrackVenue">
+            <summary>
+            Gets or sets the country of the Racetrack.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Logic.RacetrackQuery.IsFormula">
+            <summary>
+            Gets or sets a 'Yes' if the Racetrack is actively used to organize Formula 1 races, 'No' otherwise.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Logic.RacetrackQuery.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Logic.RacetrackQuery.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Logic.RacetrackQuery.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:RacersDB.Logic.SetLogic">
+            <summary>
+            This class implements ISetLogic interface.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Logic.SetLogic.#ctor(RacersDB.Repository.IRaceRepository,RacersDB.Repository.IRacerRepository,RacersDB.Repository.IRacetrackRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RacersDB.Logic.SetLogic"/> class.
+            </summary>
+            <param name="raceRepo">Interface raceRepo typed parameter because of dependency injection.</param>
+            <param name="racerRepo">Interface racerRepo typed parameter because of dependency injection.</param>
+            <param name="racetrackRepo">Interface racetrackRepo typed parameter because of dependency injection.</param>
+        </member>
+        <member name="M:RacersDB.Logic.SetLogic.AddNewRace(RacersDB.Data.Models.Race)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Logic.SetLogic.AddNewRacer(RacersDB.Data.Models.Racer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Logic.SetLogic.AddNewRacetrack(RacersDB.Data.Models.Racetrack)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Logic.SetLogic.DeleteOldRace(RacersDB.Data.Models.Race)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Logic.SetLogic.DeleteOldRacer(RacersDB.Data.Models.Racer)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Logic.SetLogic.DeleteOldRacetrack(RacersDB.Data.Models.Racetrack)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Logic.SetLogic.ChangeRacetracksName(System.Int32,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Logic.SetLogic.ChangeRaceWinnersID(System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Logic.SetLogic.ChangeSumWin(System.Int32,System.Int32)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

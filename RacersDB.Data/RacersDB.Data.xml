@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RacersDB.Data</name>
+    </assembly>
+    <members>
+        <member name="T:RacersDB.Data.Models.Race">
+            <summary>
+            This class represents the 'Race' table of .mdf file.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Data.Models.Race.Id">
+            <summary>
+            Gets or sets the ID of the Race. This is the primary key.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Data.Models.Race.Rtrack">
+            <summary>
+            Gets or sets the ID of track, where this Race was organized.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Data.Models.Race.Ryear">
+            <summary>
+            Gets or sets the year of this Race.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Data.Models.Race.Serie">
+            <summary>
+            Gets or sets the serie, in which this Race was organized.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Data.Models.Race.Sumracers">
+            <summary>
+            Gets or sets the amount of Racers participated to this event.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Data.Models.Race.Sumlaps">
+            <summary>
+            Gets or sets the amount of laps.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Data.Models.Race.Winnerid">
+            <summary>
+            Gets or sets the ID of the winner.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Data.Models.Race.RtrackNavigation">
+            <summary>
+            Gets the track, where this race was organized.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Data.Models.Race.Winner">
+            <summary>
+            Gets the Winner of this Race.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Data.Models.Race.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Data.Models.Race.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Data.Models.Race.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:RacersDB.Data.Models.Racer">
+            <summary>
+            This class represents the 'Racer' table of .mdf file.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Data.Models.Racer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RacersDB.Data.Models.Racer"/> class.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Data.Models.Racer.Id">
+            <summary>
+            Gets or sets the ID of the Racer. This is the primary key.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Data.Models.Racer.Rname">
+            <summary>
+            Gets or sets the name of the Racer.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Data.Models.Racer.Age">
+            <summary>
+            Gets or sets the age of the Racer.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Data.Models.Racer.Nationality">
+            <summary>
+            Gets or sets the Racer's country.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Data.Models.Racer.Rserie">
+            <summary>
+            Gets or sets the Racer's race series.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Data.Models.Racer.Sumwin">
+            <summary>
+            Gets or sets the Racer's amount of wins.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Data.Models.Racer.Races">
+            <summary>
+            Gets an ICollection of a bunch of Race type Races.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Data.Models.Racer.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Data.Models.Racer.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Data.Models.Racer.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:RacersDB.Data.Models.RaceTableContext">
+            <summary>
+            This class inherits from DbContext, so this is the main DB class.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Data.Models.RaceTableContext.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RacersDB.Data.Models.RaceTableContext"/> class.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Data.Models.RaceTableContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{RacersDB.Data.Models.RaceTableContext})">
+            <summary>
+            Initializes a new instance of the <see cref="T:RacersDB.Data.Models.RaceTableContext"/> class.
+            </summary>
+            <param name="options">Options parameter.</param>
+        </member>
+        <member name="P:RacersDB.Data.Models.RaceTableContext.Races">
+            <summary>
+            Gets or sets a DbSet generic type.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Data.Models.RaceTableContext.Racers">
+            <summary>
+            Gets or sets a DbSet generic type.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Data.Models.RaceTableContext.Racetracks">
+            <summary>
+            Gets or sets a DbSet generic type.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Data.Models.RaceTableContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Data.Models.RaceTableContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="T:RacersDB.Data.Models.Racetrack">
+            <summary>
+            This class represents the 'Racetrack' table of .mdf file.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Data.Models.Racetrack.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RacersDB.Data.Models.Racetrack"/> class.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Data.Models.Racetrack.Id">
+            <summary>
+            Gets or sets a decimal value. This is the primary key.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Data.Models.Racetrack.Trackname">
+            <summary>
+            Gets or sets the name of the track.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Data.Models.Racetrack.Builtyear">
+            <summary>
+            Gets or sets the year, this track has been built.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Data.Models.Racetrack.Tlength">
+            <summary>
+            Gets or sets the length of the track in metres.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Data.Models.Racetrack.Tvenue">
+            <summary>
+            Gets or sets the country of the track.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Data.Models.Racetrack.Isf1">
+            <summary>
+            Gets or sets only 0 or 1, depending on the fact, that is this track used by F1 series or not.
+            </summary>
+        </member>
+        <member name="P:RacersDB.Data.Models.Racetrack.Races">
+            <summary>
+            Gets an ICollection of a bunch of Race type Races.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Data.Models.Racetrack.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Data.Models.Racetrack.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:RacersDB.Data.Models.Racetrack.ToString">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

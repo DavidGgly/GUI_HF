@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RacersDB.Logic.Tests</name>
+    </assembly>
+    <members>
+        <member name="T:RacersDB.Logic.Tests.LogicTests">
+            <summary>
+            This class collects all mocked Test methods.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Logic.Tests.LogicTests.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RacersDB.Logic.Tests.LogicTests"/> class.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Logic.Tests.LogicTests.TestGetAllRacetracks">
+            <summary>
+            This method tests the GetAll() method, currently based on Racetrack entity.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Logic.Tests.LogicTests.TestGetOneRacer">
+            <summary>
+            This method tests the GetOne() method, currently based on Racer entity.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Logic.Tests.LogicTests.TestUpdateRaceWinnersID">
+            <summary>
+            This method tests the Update method, currently based on Race entity.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Logic.Tests.LogicTests.TestAddNewRacer">
+            <summary>
+            This method tests the AddNew() method, currently based on Racer entity.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Logic.Tests.LogicTests.TestDeleteRacetrack">
+            <summary>
+            This method tests the DeleteOld() method, currently based on Racetrack entity.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Logic.Tests.LogicTests.TestRaceQuery">
+            <summary>
+            This method tests the RaceQuery() type LINQ method.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Logic.Tests.LogicTests.TestRacerQuery">
+            <summary>
+            This method tests the RacerQuery() type LINQ method.
+            </summary>
+        </member>
+        <member name="M:RacersDB.Logic.Tests.LogicTests.TestRacetrackQuery">
+            <summary>
+            This method tests the RacetrackQuery() type LINQ method.
+            </summary>
+        </member>
+    </members>
+</doc>
